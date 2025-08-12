@@ -111,7 +111,7 @@ def check_uploaded_bins(preupload_files):
         elif f in smoke_tests_bins and not _is_executable(f):
             insufficient_perm_bins.add(f)
         # Avoid fraud commands in $PATH. e.g. atest/linux-x86/rm.
-        # must not be executable.
+        # Must not be executable.
         elif os.path.dirname(f) in prebuilt_dirs and _is_executable(f):
             illegal_bins.add(f)
     if len(target_bins) > 1:
