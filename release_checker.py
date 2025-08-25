@@ -175,7 +175,7 @@ if __name__ == '__main__':
     parser.add_argument('preupload_files', nargs='*', help='Files to be uploaded.')
     args = parser.parse_args()
     files_to_check = args.preupload_files
-    # Pre-process files_to_check(run directly by users.)
+    # pre-process files_to_check(run directly by users.)
     if not files_to_check:
         # Only consider added(A), renamed(R) and modified(M) files.
         cmd = "git status --short | egrep ^[ARM] | awk '{print $NF}'"
